@@ -5,7 +5,15 @@ import com.company.utils.StringUtils;
 public class Persona {
     private String nombre;
     private String lastName;
+    private int telf;
 
+    public void setTelf(int telf) {
+        this.telf = telf;
+    }
+
+    public int getTelf() {
+        return this.telf;
+    }
     public String getNombre(){
         return this.nombre;
     }
@@ -28,4 +36,14 @@ public class Persona {
     }
 
 
+    public String toJson() {
+        String person = String.format("{\"Nombre\": \"%s\"," +
+                "\"Apellido\": \"%s\"," +
+                "\"Cel\": %s," +
+                "\"Nombre Completo\": \"%s\"}", this.nombre,
+                this.lastName,
+                this.telf,
+                this.getFullName());
+        return person;
+    }
 }

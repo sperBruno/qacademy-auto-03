@@ -43,6 +43,22 @@ public class PersonaTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void personToJsonTest() {
+        //AAA y RGR
+        String expected = "{\"Nombre\": \"bruno\"," +
+                "\"Apellido\": \"barrios\"," +
+                "\"Cel\": 123123123," +
+                "\"Nombre Completo\": \"Bruno Barrios\"}";
+        persona.setTelf(123123123);
+
+        String actual = persona.toJson();
+
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
     @After
     public void afterTest() {
         System.out.println("After test");
