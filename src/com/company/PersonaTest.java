@@ -3,7 +3,7 @@ package com.company;
 import org.junit.*;
 
 public class PersonaTest {
-
+    private Persona persona;
     @BeforeClass
     public static void beforeClass() {
         System.out.println("Before Class");
@@ -11,7 +11,9 @@ public class PersonaTest {
 
     @Before
     public void beforeTest() {
-        System.out.println("Before test");
+        persona = new Persona();
+        persona.setNombre("bruno");
+        persona.setLastName("barrios");
     }
 
     @Test
@@ -21,9 +23,6 @@ public class PersonaTest {
         //Arrange
         String expected = "bruno";
         String expectedLastName = "barrios";
-        Persona persona = new Persona();
-        persona.setNombre("bruno");
-        persona.setLastName("barrios");
 
         //Act
         String actual = persona.getNombre();
@@ -36,8 +35,12 @@ public class PersonaTest {
 
     @Test
     public void getNombreCompletoTest() {
-        System.out.println("This is a test second");
-        Assert.assertEquals("bruno", "bruno");
+        //AAA
+        String expected = "Bruno Barrios";
+
+        String actual = persona.getFullName();
+
+        Assert.assertEquals(expected, actual);
     }
 
     @After
