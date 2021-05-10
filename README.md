@@ -6,3 +6,6 @@ This is git training
 
 1. GIT PUSH
 > git push <remote> <branch>
+
+2. Git Pull
+> git pull <remote> <branch>
