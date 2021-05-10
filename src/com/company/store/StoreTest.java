@@ -1,15 +1,20 @@
 package com.company.store;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class StoreTest {
+    private Store tienda;
+
+    @Before
+    public void beforeTests() {
+        tienda = new Store();
+    }
 
     @Test
     public void calcularCostoSinProductosTest() {
         //AAA
-        Store tienda = new Store();
-
         int expected = 0;
 
         //Act
@@ -23,7 +28,6 @@ public class StoreTest {
     @Test
     public void calcularCostoTotalTest() {
         //AAA
-        Store tienda = new Store();
         int expected = 12;
 
         tienda.agregarProducto("Pan", 1);
@@ -41,7 +45,6 @@ public class StoreTest {
     @Test
     public void calcularCostoTotalRemoviendoProductoTest() {
         //AAA
-        Store tienda = new Store();
         int expected = 11;
 
         tienda.agregarProducto("Pan", 1);
