@@ -28,7 +28,6 @@ public class PersonaTest {
         String actual = persona.getNombre();
         String actualLastName = persona.getLastName();
         //Assert
-
         Assert.assertEquals(expected, actual);
         Assert.assertEquals(expectedLastName, actualLastName);
     }
