@@ -1,2 +1,6 @@
+/.idea
+/out
+auto-tdd.iml
+/.DS_Store
 /build
 /.gradle
