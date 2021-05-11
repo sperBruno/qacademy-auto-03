@@ -60,4 +60,31 @@ public class StoreTest {
         //Act
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void validarDetalleCompraTest() {
+        //AAA
+        String expected = "Pan - Bs. 1\nFideos - Bs. 5\nBolsa de leche - Bs. 6\nTotal - Bs. 12";
+        tienda.agregarProducto("Pan", 1);
+        tienda.agregarProducto("Fideos", 5);
+        tienda.agregarProducto("Bolsa de leche", 6);
+
+        //Act
+        String actual = tienda.obtenerDetalleCompra();
+
+        //Assert
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void validarDetalleSinProductos() {
+        //AAA
+        String expected = "Total - Bs. 0";
+
+        //Act
+        String actual = tienda.obtenerDetalleCompra();
+
+        //Assert
+        Assert.assertEquals(expected, actual);
+    }
 }
